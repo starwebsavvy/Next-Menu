@@ -81,8 +81,8 @@ export default function Navbar() {
 			email: "skyjones@gmail.com",
 		},
 		{
-			url: "sw-account.png",
-			name: "Sky Jones",
+			url: "john.png",
+			name: "John Doe",
 			role: "Recruiter",
 			email: "skyjones@gmail.com",
 		},
@@ -200,7 +200,10 @@ export default function Navbar() {
 								? "lighttheme-btn active"
 								: "lighttheme-btn"
 						}`}
-						onClick={toggleTheme}
+						onClick={(e) => {
+							e.stopPropagation();
+							toggleTheme();
+						}}
 					>
 						Light
 					</Button>
@@ -216,7 +219,10 @@ export default function Navbar() {
 								? "darktheme-btn active"
 								: "darktheme-btn"
 						}`}
-						onClick={toggleTheme}
+						onClick={(e) => {
+							e.stopPropagation();
+							toggleTheme();
+						}}
 					>
 						Dark
 					</Button>
@@ -247,6 +253,7 @@ export default function Navbar() {
 										alt="Avatar"
 										width={50}
 										height={50}
+										style={{ marginRight: "10px" }}
 									/>
 									<div className="sw-acc-gp">
 										<p>{account[index].role}</p>
