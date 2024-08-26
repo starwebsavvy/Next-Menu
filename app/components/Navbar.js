@@ -31,35 +31,7 @@ const StyledMenu = styled((props) => (
 		}}
 		{...props}
 	/>
-))(({ theme }) => ({
-	"& .MuiPaper-root": {
-		borderRadius: 6,
-		marginTop: theme.spacing(1),
-		minWidth: 180,
-		color:
-			theme.palette.mode === "light"
-				? "rgb(55, 65, 81)"
-				: theme.palette.grey[300],
-		boxShadow:
-			"rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
-		"& .MuiMenu-list": {
-			padding: "4px 0",
-		},
-		"& .MuiMenuItem-root": {
-			"& .MuiSvgIcon-root": {
-				fontSize: 18,
-				color: theme.palette.text.secondary,
-				marginRight: theme.spacing(1.5),
-			},
-			"&:active": {
-				backgroundColor: alpha(
-					theme.palette.primary.main,
-					theme.palette.action.selectedOpacity
-				),
-			},
-		},
-	},
-}));
+))(({ theme }) => ({}));
 
 export default function Navbar() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -107,35 +79,20 @@ export default function Navbar() {
 		});
 	};
 	return (
-		<div style={{ float: "right", width: "23%" }}>
+		<div className="menu">
 			<Button
-				// id="demo-customized-button"
 				aria-controls={open ? "demo-customized-menu" : undefined}
 				aria-haspopup="true"
 				aria-expanded={open ? "true" : undefined}
 				variant="contained"
 				disableelevation="true"
 				onClick={handleClick}
-				endIcon={
-					<KeyboardArrowDownIcon
-						sx={{
-							color: "black",
-							fontSize: "35px !important",
-							fontWeight: "bold",
-						}}
-					/>
-				}
-				// className="btn-menu"
+				endIcon={<KeyboardArrowDownIcon />}
 				className={
 					isLightTheme
 						? "btn-menu light-theme"
 						: "btn-menu dark-theme"
 				}
-				sx={{
-					backgroundColor: "white",
-					borderRadius: "15px",
-					justifyContent: "space-between",
-				}}
 			>
 				<Image
 					src={`/images/${account[0].url}`}
@@ -190,11 +147,6 @@ export default function Navbar() {
 				>
 					<Button
 						startIcon={<WbSunnyOutlinedIcon />}
-						sx={{
-							textTransform: "none",
-							padding: "6px 20px",
-							color: "black",
-						}}
 						className={` ${
 							isLightTheme
 								? "lighttheme-btn active"
@@ -209,11 +161,6 @@ export default function Navbar() {
 					</Button>
 					<Button
 						startIcon={<DarkModeOutlinedIcon />}
-						sx={{
-							textTransform: "none",
-							padding: "6px 20px",
-							color: "black",
-						}}
 						className={`${
 							!isLightTheme
 								? "darktheme-btn active"
@@ -230,7 +177,7 @@ export default function Navbar() {
 				<MenuItem
 					onClick={handleClose}
 					disableRipple
-					sx={{ fontSize: "13px" }}
+					className="sw-label"
 				>
 					SWITCH ACCOUNTS
 				</MenuItem>
@@ -242,18 +189,12 @@ export default function Navbar() {
 								onClick={() => SwitchAccount(index)}
 								key={index}
 							>
-								<div
-									style={{
-										display: "flex",
-										alignItems: "center",
-									}}
-								>
+								<div>
 									<Image
 										src={`/images/${account[index].url}`}
 										alt="Avatar"
 										width={50}
 										height={50}
-										style={{ marginRight: "10px" }}
 									/>
 									<div className="sw-acc-gp">
 										<p>{account[index].role}</p>
@@ -261,10 +202,7 @@ export default function Navbar() {
 										<p>{account[index].email}</p>
 									</div>
 								</div>
-								<CircleOutlinedIcon
-									className="circle-icon"
-									sx={{ width: 16, height: 16 }}
-								/>
+								<CircleOutlinedIcon className="circle-icon" />
 							</div>
 						);
 					}
@@ -277,12 +215,6 @@ export default function Navbar() {
 				>
 					<Button
 						startIcon={<LoginOutlinedIcon />}
-						sx={{
-							textTransform: "none",
-							padding: "6px 20px",
-							width: "100%",
-							color: "black",
-						}}
 						className={
 							isLightTheme
 								? "theme-btn light-theme"

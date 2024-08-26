@@ -107,6 +107,8 @@ a {
 /* menu css */
 .btn-menu {
 	width: 100%;
+	border-radius: 15px;
+	justify-content: space-between;
 }
 .btn-menu.light-theme {
 	background: white;
@@ -135,7 +137,7 @@ a {
 .btn-menu.light-theme div p.light-theme:last-child {
 	color: #6b707c;
 }
-/* Menu.module.css */
+
 .noHoverEffect {
 	background-color: transparent !important; /* Remove background on hover */
 	color: inherit !important; /* Ensure text color doesn't change on hover */
@@ -189,7 +191,9 @@ a {
 	display: none;
 }
 .sw-account:hover .circle-icon {
-	display: block; /* Show the icon on hover */
+	display: block;
+	width: 16px;
+	height: 16px;
 }
 /* Toggle Theme */
 body {
@@ -252,14 +256,76 @@ body.dark-theme {
 .btn-menu.dark-theme svg {
 	color: white;
 }
-/* .light-theme {
-	background: white;
+.menu {
+	float: right;
+	width: 23%;
+}
+.btn-menu svg {
+	color: black;
+	font-size: 35px !important;
+	font-weight: bold;
+}
+.lighttheme-btn {
+	text-transform: none;
+	padding: 6px 20px;
+	color: white;
+}
+.darktheme-btn {
+	text-transform: none;
+	padding: 6px 20px;
 	color: black;
 }
-.dark-theme {
-	background: black;
-	color: white;
-} */
+.sw-label {
+	font-size: 13px;
+}
+.sw-account > div:first-child {
+	display: flex;
+	align-items: center;
+}
+.sw-account > div:first-child img {
+	margin-right: 10px;
+}
+.theme-btn {
+	text-transform: none;
+	padding: 6px 20px;
+	width: 100%;
+	color: black;
+}
+#demo-customized-button {
+	background: white;
+	border-radius: 15px;
+	justify-content: space-between;
+}
+/* tt */
+#demo-customized-menu .MuiPaper-root {
+	border-radius: 6px;
+	margin-top: 8px; /* Equivalent to theme.spacing(1) */
+	min-width: 180px;
+	color: rgb(55, 65, 81); /* Default color for light mode */
+	box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px,
+		rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+		rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+#demo-customized-menu .MuiMenu-list {
+	padding: 4px 0;
+}
+
+#demo-customized-menu .MuiMenuItem-root .MuiSvgIcon-root {
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.54); /* Default text secondary color */
+	margin-right: 12px; /* Equivalent to theme.spacing(1.5) */
+}
+
+#demo-customized-menu .MuiMenuItem-root:active {
+	background-color: rgba(
+		25,
+		118,
+		210,
+		0.12
+	); /* Example primary color with selected opacity */
+}
 
 @media (prefers-color-scheme: dark) {
 	html {
