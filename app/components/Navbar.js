@@ -81,7 +81,7 @@ export default function Navbar() {
 			email: "skyjones@gmail.com",
 		},
 		{
-			url: "john.png",
+			url: "sw-account.png",
 			name: "John Doe",
 			role: "Recruiter",
 			email: "skyjones@gmail.com",
