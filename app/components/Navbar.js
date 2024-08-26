@@ -173,11 +173,11 @@ export default function Navbar() {
 
 				<MenuItem onClick={handleClose} disableRipple>
 					<LiveHelpOutlinedIcon />
-					FAQ's
+					FAQ&apos;s
 				</MenuItem>
 				<MenuItem onClick={handleClose} disableRipple>
 					<HelpOutlineOutlinedIcon />
-					Q&A's
+					Q&A&apos;s
 				</MenuItem>
 				<MenuItem onClick={handleClose} disableRipple>
 					<PrivacyTipOutlinedIcon />
